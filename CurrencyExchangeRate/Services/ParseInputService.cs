@@ -1,4 +1,5 @@
-﻿using CurrencyExchangeRate.Models;
+﻿using CurrencyExchangeRate.Interfaces;
+using CurrencyExchangeRate.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyExchangeRate.Services
 {
-    public class ParseInputService
+    public class ParseInputService : IParseInputService
     {
         private readonly InputProcessingService _inputProcessingService;
         private readonly IEnumerable<ExchangeRate> _exchangeRates;

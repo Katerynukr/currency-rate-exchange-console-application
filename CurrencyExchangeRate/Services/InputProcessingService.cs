@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyExchangeRate.Services
 {
-    public class InputProcessingService
+    public class InputProcessingService : IInputProcessingService
     {
         public Dictionary<string, string> exchangeRateCommandInput = new Dictionary<string, string>();
 
@@ -28,7 +28,7 @@ namespace CurrencyExchangeRate.Services
         {
             if (userInputArray.Length != 0)
             {
-                string command = userInputArray.FirstOrDefault(i =>(i.ToLower()) == "exchange");
+                string command = userInputArray.FirstOrDefault(i => (i.ToLower()) == "exchange");
                 if (command != null)
                 {
                     this.exchangeRateCommandInput.Add("command", command);
@@ -86,7 +86,7 @@ namespace CurrencyExchangeRate.Services
         }
         public Dictionary<string, string> GetKeyValuePairs(string userInput)
         {
-           var userInputArray = this.SplitInput(userInput);
+            var userInputArray = this.SplitInput(userInput);
             this.CommandInput(userInputArray);
             this.CurrencyPairInput(userInputArray);
             this.AmountToExchangeInput(userInputArray);

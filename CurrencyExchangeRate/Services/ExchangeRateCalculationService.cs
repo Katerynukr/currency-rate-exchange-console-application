@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyExchangeRate.Services
 {
-    public class ExchangeRateCalculationService
+    public class ExchangeRateCalculationService : IExchangeRateCalculationService
     {
         public decimal CalculateExchangeRate(UserCurrencyInput userInput)
         {
