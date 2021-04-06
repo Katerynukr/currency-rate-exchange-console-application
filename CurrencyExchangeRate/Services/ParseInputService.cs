@@ -24,8 +24,8 @@ namespace CurrencyExchangeRate.Services
             var inputData = _inputProcessingService.GetKeyValuePairs(userInput);
             var amount = Int32.Parse(inputData["amount"]);
             var currencies = inputData["currency pair"].Split("/");
-            var currencyExchangeFrom = _exchangeRates.Where(c => c.ISO == currencies[0]).FirstOrDefault();
-            var currencyExchangeTo = _exchangeRates.Where(c => c.ISO == currencies[1]).FirstOrDefault();
+            var currencyExchangeFrom = _exchangeRates.Where(c => c.ISO == currencies[0].ToUpper()).FirstOrDefault();
+            var currencyExchangeTo = _exchangeRates.Where(c => c.ISO == currencies[1].ToUpper()).FirstOrDefault();
 
             return new UserCurrencyInput()
             {

@@ -49,7 +49,7 @@ namespace CurrencyExchangeRate.Services
         {
             if (userInputArray.Length != 0)
             {
-                string currencyPair = userInputArray.FirstOrDefault(i => i.ToUpper().Contains("/"));
+                string currencyPair = userInputArray.FirstOrDefault(i => i.Contains("/"));
                 if (currencyPair != null)
                 {
                     this.exchangeRateCommandInput.Add("currency pair", currencyPair);
