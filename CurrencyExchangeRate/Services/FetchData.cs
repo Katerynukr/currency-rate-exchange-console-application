@@ -1,4 +1,5 @@
-﻿using CurrencyExchangeRate.Models;
+﻿using CurrencyExchangeRate.Interfaces;
+using CurrencyExchangeRate.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
